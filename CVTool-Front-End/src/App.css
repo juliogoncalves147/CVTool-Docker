@@ -1,0 +1,237 @@
+/* General reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure body takes at least full height */
+}
+
+/* Ensure the app container takes the full viewport height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  min-height: 110vh; /* Takes the full height of the viewport */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.file-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.file-name {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  gap: 5px; /* Adjust spacing between icon and text */
+  text-align: center; /* Center text within h3 element */
+  margin-bottom: 1%;
+}
+
+.file-name-text {
+  font-family: serif; /* Specify the desired font family */
+  margin: 0; /* Remove default margin */
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(to right, #0d47a1, #42a5f5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Button styling */
+.navbar-button {
+  background: #ffffff;
+  color: #0d47a1;
+  padding: 10px 20px;
+  border: 2px solid #0d47a1;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.navbar-button:hover {
+  background: #b4b5b5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+.navbar-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .navbar-button {
+    margin: 10px 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  background: #f0f0f0;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  overflow-y: auto;
+  height: 100%;
+  max-height: 100vh;
+  gap: 40px;
+}
+
+.left-pane,
+.right-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 2px dashed #0d47a1;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.query-container form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.query-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-height: 82vh;
+}
+
+.query-history {
+  display: block;
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+  background-color: rgb(255, 255, 255);
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.query-history ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.query-history li {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px dashed #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  background-color: #ffcdd2; /* Light red background */
+}
+
+.success {
+  background-color: #c8e6c9; /* Light green background */
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border: 2px dashed #ccc;
+  border-color: #0d47a1;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Deep blue background */
+  color: #0d47a1; /* White text color */
+  border: none;
+  border-color: #0d47a1;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label input[type="file"] {
+  display: none; /* Hide the file input */
+}
+
+.upload-label:hover {
+  background-color: #dadada; /* Darker blue on hover */
+}
+
+.file-display {
+  flex: 1; /* Fill the remaining height of the parent */
+  display: block;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1.5px dashed #ccc;
+  border-color: #0d47a1;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.file-display pre {
+  background-color: #ffffff; /* Ensure background color applies to <pre> tag */
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}

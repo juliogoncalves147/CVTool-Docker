@@ -1,0 +1,85 @@
+# Remindes
+-- Sem comentarios
+-- Parentises todos espaçados
+-- Ter cuidado com as secções que manda traduzir por causa de referencias.
+-- Adicionar um beautifier ao .tex depois do processamento.
+
+
+
+
+Inputs datas possiveis:
+
+Jan, 2015
+Janeiro, 2015
+2015-2017
+2015-...
+05-06-2023
+NAME'2015
+(2015)
+
+dddd 
+dddd/dddd
+
+2017-2027  
+
+17 de Mes dddd
+
+Mes dddd
+
+dddd
+
+
+# Para o filtro das sections funcionar direito, os nomes das sections tem que ter texto limpo
+
+# Gramática do tipo EBNF
+# Notas Sugestoes
+# -- Trocar  SELECT * FILTER WHERE | FILTER BY     conditions
+# -- TRocar  SHOW * FILTERED BY
+# -- FILTER PROEX BY DATE > 2005;
+
+#  -- Exemplos de Querys possiveis de fazer -- 
+#
+##  Selecionar por Secções
+##       SELECT 'Work experience', 'Education'  
+##      -- Retorna apenas as secções 'Nome1' e 'Nome2'
+
+##  Selecionar todas as Secções
+##       SELECT * 
+##      -- Retorna todas as secções
+
+##  Filtrar uma Secção Específica por Data
+##       SELECT * WHERE SECTION = 'Education' AND DATE >= '2010' 
+##      -- Retorna todo o ficheiro, filtrando a secção especificada;
+
+##  Filtrar uma Secção por uma Data e Outra por outra data
+##       SELECT * WHERE (SECTION = 'Education Universitary' AND DATE > '2010') OR (SECTION = 'Professional Experience' AND DATE = '2010')
+##      -- Retorna todo o ficheiro, filtrando as secções especificadas;
+
+##  Filtrar todo o ficheiro por Data
+##       SELECT * WHERE DATE > '2010'
+##      -- Retorna todo o ficheiro, filtrando por data;
+
+##  Filtrar todo o ficheiro por uma data, excepto uma secção especificada
+##       SELECT * WHERE SECTION != 'Education' AND DATE > '2010'
+##      -- Retorna todo o ficheiro, filtrando por data, excepto a secção especificada;
+
+##  Filtar ficheiro para apenas duas seções e data superior a 2010
+##      SELECT 'Professional Experience', 'Education' WHERE DATE > '2010';
+##      -- Retorna apenas as secções 'Professional Experience' e 'Education' com data superior a 2010
+
+##  Traduzir Currículo para Outra Língua
+##       TRANSLATE FROM 'fr' TO 'en';
+##       TRANSLATE FROM 'auto' TO 'en';
+##      -- Traduz o currículo de francês para inglês
+
+#  Reordenar seções
+#       REORDER "Professional Experience", "Education", "Projects"
+#      -- Reordena as secções do currículo pela ordem especificada
+
+# --- Possiveis Sugestoes ---
+
+##  Exportação em Múltiplos Formatos
+##       EXPORT curriculum TO 'PDF';
+
+
+## Reordernar os itens das seccçoes por datas ASC ou DESC ? 

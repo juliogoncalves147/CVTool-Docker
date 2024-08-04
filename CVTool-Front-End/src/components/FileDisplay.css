@@ -1,0 +1,58 @@
+/* Darker Overleaf-like styles for LaTeX syntax highlighting */
+
+.file-display .token.comment,
+.file-display .token.prolog,
+.file-display .token.doctype,
+.file-display .token.cdata {
+  color: #e17d19 !important; /* Dark grey for comments */
+}
+
+.file-display .token.punctuation {
+  color: #2a5ce6 !important; /* Light grey for punctuation */
+}
+
+.file-display .token.namespace {
+  opacity: 0.7 !important; /* Change the opacity of namespaces */
+}
+
+.file-display .token.operator,
+.file-display .token.boolean,
+.file-display .token.number {
+  color: #e06c75 !important; /* Red for operators, booleans, and numbers */
+}
+
+.file-display .token.property {
+  color: #2a5ce6 !important; /* Light blue for properties */
+}
+
+.file-display .token.tag {
+  color: #e06c75 !important; /* Red for tags */
+}
+
+.file-display .token.string {
+  color: #268312 !important; /* Green for strings */
+}
+
+.file-display .token.selector {
+  color: #2a5ce6 !important; /* Light blue for selectors */
+}
+
+.file-display .token.attr-name {
+  color: #d19a66 !important; /* Dark orange for attribute names */
+}
+
+.file-display .token.attr-value {
+  color: #e06c75 !important; /* Red for attribute values */
+}
+
+.file-display .token.keyword {
+  color: #268312 !important; /* Purple for keywords */
+}
+
+.file-display .token.function {
+  color: #2a5ce6 !important; /* Light blue-green for functions */
+}
+
+.file-display .token.url {
+  color: #2aa132 !important; /* Light blue for URLs */
+}

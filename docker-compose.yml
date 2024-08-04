@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./CVTool-Back-End
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./CVTool-Back-End:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    build:
+      context: ./CVTool-Front-End
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./CVTool-Front-End:/app
+    stdin_open: true
+    tty: true
