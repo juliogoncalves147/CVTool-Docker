@@ -17,7 +17,7 @@ services:
     build:
       context: ./CVTool-Front-End
     ports:
-      - "50760:50760"
+      - "50760:80"
     volumes:
       - ./CVTool-Front-End:/app
     stdin_open: true
