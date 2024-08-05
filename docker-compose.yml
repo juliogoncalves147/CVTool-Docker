@@ -2,20 +2,22 @@ version: '3.8'
 
 services:
   backend:
+    container_name: PG50537-CVTool-Back-End
     build:
       context: ./CVTool-Back-End
     ports:
-      - "8000:8000"
+      - "50761:50761"
     volumes:
       - ./CVTool-Back-End:/app
     environment:
       - PYTHONUNBUFFERED=1
 
   frontend:
+    container_name: PG50537-CVTool-Front-End
     build:
       context: ./CVTool-Front-End
     ports:
-      - "3000:3000"
+      - "50760:50760"
     volumes:
       - ./CVTool-Front-End:/app
     stdin_open: true
