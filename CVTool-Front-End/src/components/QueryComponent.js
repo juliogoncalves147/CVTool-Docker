@@ -35,7 +35,7 @@ function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
     const sessionId = getSessionId();
 
     try {
-      const response = await fetch(LOCAL_HOST + "/query/", {
+      const response = await fetch(DI + "/query/", {
         method: "POST",
         headers: {
           'Session-Id': sessionId

@@ -16,7 +16,7 @@ function UploadComponent({ onFileUpload }) {
 
       const sessionId = getSessionId();
 
-      const response = await fetch(LOCAL_HOST + "/uploadfile/", {
+      const response = await fetch(DI + "/uploadfile/", {
         method: "POST",
         headers: {
           'Session-Id': sessionId
