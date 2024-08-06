@@ -22,3 +22,7 @@ services:
       - ./CVTool-Front-End:/app
     stdin_open: true
     tty: true
+
+networks:
+  my-network:
+    driver: bridge

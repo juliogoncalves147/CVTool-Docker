@@ -30,7 +30,7 @@ function ToolPage() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://0.0.0.0:5760/uploadfile/", {
+      const response = await fetch("http://localhost:50761/uploadfile/", {
         method: "POST",
         body: formData,
       });
@@ -54,7 +54,7 @@ function ToolPage() {
     }
 
     const response = await fetch(
-      `http://0.0.0.0:5760/downloadfile/?filename=${fileName}`,
+      `http://localhost:50761/downloadfile/?filename=${fileName}`,
       {
         method: "GET",
       }

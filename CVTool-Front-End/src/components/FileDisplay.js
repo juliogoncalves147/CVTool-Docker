@@ -11,7 +11,7 @@ function FileDisplay({ fileData, fileName, refreshKey }) {
     const fetchFileContent = async () => {
       try {
         const response = await fetch(
-          `http://0.0.0.0:5760/getfile/?filename=${encodeURIComponent(
+          `http://localhost:50761/getfile/?filename=${encodeURIComponent(
             fileName
           )}`
         );
