@@ -8,7 +8,7 @@ function UploadComponent({ onFileUpload }) {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://127.0.0.1:8000/uploadfile/", {
+      const response = await fetch("http://0.0.0.0:5760/uploadfile/", {
         method: "POST",
         body: formData,
       });

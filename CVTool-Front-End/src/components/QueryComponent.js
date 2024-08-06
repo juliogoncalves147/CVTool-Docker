@@ -28,7 +28,7 @@ function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
     setExecutingQuery(newExecutingQuery);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/query/", {
+      const response = await fetch("http://0.0.0.0:5760/query/", {
         method: "POST",
         body: formData,
       });
