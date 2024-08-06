@@ -5,6 +5,11 @@ import Button from "@mui/material/Button";
 import { List, ListItem, ListItemText, Typography, Grid } from "@mui/material";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import HistoryIcon from "@mui/icons-material/History";
+import { getSessionId } from "../utils/session";
+
+export const DI = "http://193.136.19.129:50761"
+
+export const LOCAL_HOST = "http://localhost:8000"
 
 function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
   const [query, setQuery] = useState("");
@@ -27,9 +32,14 @@ function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
     const newExecutingQuery = { status: "EXECUTING", query, timestamp };
     setExecutingQuery(newExecutingQuery);
 
+    const sessionId = getSessionId();
+
     try {
-      const response = await fetch("http://193.136.19.129:50761/query/", {
+      const response = await fetch(LOCAL_HOST + "/query/", {
         method: "POST",
+        headers: {
+          'Session-Id': sessionId
+        },
         body: formData,
       });
 

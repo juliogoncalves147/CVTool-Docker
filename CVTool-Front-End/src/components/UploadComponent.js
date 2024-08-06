@@ -1,5 +1,11 @@
 import React from "react";
 import UploadIcon from "@mui/icons-material/Upload";
+import { getSessionId } from "../utils/session";
+
+
+export const DI = "http://193.136.19.129:50761"
+
+export const LOCAL_HOST = "http://localhost:8000"
 
 function UploadComponent({ onFileUpload }) {
   const handleFileChange = async (event) => {
@@ -8,8 +14,13 @@ function UploadComponent({ onFileUpload }) {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://193.136.19.129:50761/uploadfile/", {
+      const sessionId = getSessionId();
+
+      const response = await fetch(LOCAL_HOST + "/uploadfile/", {
         method: "POST",
+        headers: {
+          'Session-Id': sessionId
+        },
         body: formData,
       });
 

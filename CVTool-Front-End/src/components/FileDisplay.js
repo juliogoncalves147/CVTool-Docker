@@ -3,17 +3,28 @@ import Prism from "prismjs";
 import "prismjs/components/prism-latex";
 import "prismjs/themes/prism.css";
 import "./FileDisplay.css";
+import { getSessionId } from "../utils/session";
+
+export const DI = "http://193.136.19.129:50761"
+
+export const LOCAL_HOST = "http://localhost:8000"
 
 function FileDisplay({ fileData, fileName, refreshKey }) {
   const [fileContent, setFileContent] = useState("");
+
+  const sessionId = getSessionId();
 
   useEffect(() => {
     const fetchFileContent = async () => {
       try {
         const response = await fetch(
-          `http://193.136.19.129:50761/getfile/?filename=${encodeURIComponent(
-            fileName
-          )}`
+          DI + `/getfile/?filename=${encodeURIComponent(fileName)}`,
+          {
+            method: 'GET',
+            headers: {
+              'Session-Id': sessionId
+            }
+          }
         );
         if (response.ok) {
           const text = await response.text();

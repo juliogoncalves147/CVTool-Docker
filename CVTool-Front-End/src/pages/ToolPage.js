@@ -10,12 +10,17 @@ import DownloadIcon from "@mui/icons-material/Download";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import HomeIcon from "@mui/icons-material/Home";
 import { Typography , IconButton} from "@mui/material";
+import { getSessionId } from "../utils/session";
 import FilePresentOutlinedIcon from "@mui/icons-material/FilePresentOutlined";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./ToolPage.css";
+
+export const DI = "http://193.136.19.129:50761"
+
+export const LOCAL_HOST = "http://localhost:8000"
 
 function ToolPage() {
   const [fileData, setFileData] = useState(null);
@@ -30,8 +35,13 @@ function ToolPage() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("http://193.136.19.129:50761/uploadfile/", {
+      const sessionId = getSessionId();
+
+      const response = await fetch(DI + "/uploadfile/", {
         method: "POST",
+        headers: {
+          'Session-Id': sessionId
+        },
         body: formData,
       });
 
@@ -52,11 +62,15 @@ function ToolPage() {
       alert("No file to download");
       return;
     }
-
+    const sessionId = getSessionId();
+    
     const response = await fetch(
-      `http://193.136.19.129:50761/downloadfile/?filename=${fileName}`,
+      DI + `/downloadfile/?filename=${fileName}`,
       {
         method: "GET",
+        headers: {
+          'Session-Id': sessionId
+        }  
       }
     );
 
