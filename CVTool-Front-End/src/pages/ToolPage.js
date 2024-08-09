@@ -22,6 +22,8 @@ export const DI = "http://193.136.19.129:50761"
 
 export const LOCAL_HOST = "http://localhost:8000"
 
+export const apiUrl = process.env.REACT_APP_API_URL;
+
 function ToolPage() {
   const [fileData, setFileData] = useState(null);
   const [queryHistory, setQueryHistory] = useState([]);
@@ -37,7 +39,7 @@ function ToolPage() {
 
       const sessionId = getSessionId();
 
-      const response = await fetch(DI + "/uploadfile/", {
+      const response = await fetch(apiUrl + "/uploadfile/", {
         method: "POST",
         headers: {
           'Session-Id': sessionId
@@ -65,7 +67,7 @@ function ToolPage() {
     const sessionId = getSessionId();
     
     const response = await fetch(
-      DI + `/downloadfile/?filename=${fileName}`,
+      apiUrl + `/downloadfile/?filename=${fileName}`,
       {
         method: "GET",
         headers: {

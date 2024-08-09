@@ -7,6 +7,8 @@ export const DI = "http://193.136.19.129:50761"
 
 export const LOCAL_HOST = "http://localhost:8000"
 
+export const apiUrl = process.env.REACT_APP_API_URL;
+
 function UploadComponent({ onFileUpload }) {
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -16,7 +18,7 @@ function UploadComponent({ onFileUpload }) {
 
       const sessionId = getSessionId();
 
-      const response = await fetch(DI + "/uploadfile/", {
+      const response = await fetch(apiUrl + "/uploadfile/", {
         method: "POST",
         headers: {
           'Session-Id': sessionId

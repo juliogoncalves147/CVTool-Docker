@@ -35,17 +35,26 @@ def printRunTime(start_time, end_time):
 
 def checkSectionQuery(sectionlist, group):
     for groupclauses in group:
-                print("Group Clauses:" + str(groupclauses))
-                for clause in groupclauses:
-                    if clause.get("field") == "SECTION":
-                        if clause.get("value") not in sectionlist:
-                            print("Section not in list")
-                            print("Section: " + clause.get("value"))
-                            print("List: " + str(sectionlist))
-                            exit()
-                    print("Field: " + clause.get("field"))
-                    print("Operator: " + clause.get("operator"))
-                    print("Value: " + clause.get("value"))
+        print("Group Clauses: " + str(groupclauses))
+    
+        # Check if groupclauses is a list of elements
+        if isinstance(groupclauses, list):
+            for clause in groupclauses:
+                if clause.get("field") == "SECTION":
+                    if clause.get("value") not in sectionlist:
+                        print("Section not in list")
+                        print("Section: " + clause.get("value"))
+                        print("List: " + str(sectionlist))
+                        exit()
+        else:
+            # If groupclauses is a single element, process it directly
+            clause = groupclauses
+            if clause.get("field") == "SECTION":
+                if clause.get("value") not in sectionlist:
+                    print("Section not in list")
+                    print("Section: " + clause.get("value"))
+                    print("List: " + str(sectionlist))
+                    exit()
 
 def is_list_of_list_of_dicts(variable):
     if not isinstance(variable, list):

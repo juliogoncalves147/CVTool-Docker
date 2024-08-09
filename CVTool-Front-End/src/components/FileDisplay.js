@@ -9,6 +9,8 @@ export const DI = "http://193.136.19.129:50761"
 
 export const LOCAL_HOST = "http://localhost:8000"
 
+export const apiUrl = process.env.REACT_APP_API_URL;
+
 function FileDisplay({ fileData, fileName, refreshKey }) {
   const [fileContent, setFileContent] = useState("");
 
@@ -18,7 +20,7 @@ function FileDisplay({ fileData, fileName, refreshKey }) {
     const fetchFileContent = async () => {
       try {
         const response = await fetch(
-          DI + `/getfile/?filename=${encodeURIComponent(fileName)}`,
+          apiUrl + `/getfile/?filename=${encodeURIComponent(fileName)}`,
           {
             method: 'GET',
             headers: {

@@ -11,6 +11,8 @@ export const DI = "http://193.136.19.129:50761"
 
 export const LOCAL_HOST = "http://localhost:8000"
 
+export const apiUrl = process.env.REACT_APP_API_URL;
+
 function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
   const [query, setQuery] = useState("");
   const [history, setHistory] = useState(queryHistory); // State for query history
@@ -35,7 +37,7 @@ function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
     const sessionId = getSessionId();
 
     try {
-      const response = await fetch(DI + "/query/", {
+      const response = await fetch(apiUrl + "/query/", {
         method: "POST",
         headers: {
           'Session-Id': sessionId

@@ -96,7 +96,7 @@ async def query(str_query: str = Form(...), filename: str = Form(...), session_i
         controller.handle_query(file_path, str_query)
     except Exception as e:
         print(f"Error processing query: {e}")
-        return {"status": "ERROR", "query": "Error processing your query. Validate your syntax!"}
+        return {"status": "ERROR", "query": f"Error processing your query. Validate your syntax!     QUERY - {str_query}"}
     
     # Process the query
     return {"status": "OK", "query": str_query}
