@@ -22,6 +22,15 @@ body {
   gap: 10px;
 }
 
+.query-command {
+  font-weight: bold;
+  color: rgb(51, 176, 174);
+}
+
+.query-parameter {
+  color: #313a7d;
+}
+
 .section {
   display: flex;
   flex-direction: column;

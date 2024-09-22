@@ -33,7 +33,6 @@ def worker(q, results, from_language, to_language, lock):
         with lock:
             print(f"Processed item {index + 1} out of {len(results)} remaining")
 
-
 def translate(from_language, to_language, parsed_file):
     q = queue.Queue()
     results = [None] * len(parsed_file)  # Pre-allocate a list to hold results

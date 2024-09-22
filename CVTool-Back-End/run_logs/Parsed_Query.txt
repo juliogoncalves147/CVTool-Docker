@@ -1,0 +1,1 @@
+[{'queryField': 'SHOW', 'clauses': [{'field': 'subsection', 'operator': '=', 'value': 'PhD'}, {'field': 'date', 'operator': '<', 'value': '2019'}], 'sectionlist': ['Education and training']}]

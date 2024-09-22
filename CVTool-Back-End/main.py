@@ -1,10 +1,9 @@
-import json
-from fastapi import FastAPI, File, HTTPException, Response, Header, UploadFile, Form
+from fastapi import FastAPI, File, HTTPException, Header, UploadFile, Form
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-import os
-from tempfile import NamedTemporaryFile
+
 from src.controller import Controller
+
 import os
 import aiofiles
 

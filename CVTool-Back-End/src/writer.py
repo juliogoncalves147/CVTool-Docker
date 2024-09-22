@@ -1,9 +1,9 @@
 
-
-class writer:
+import subprocess
+class Writer:
     def __init__(self):
         pass
-    
+
     def writeStructuredData(parsedFile, path):
         with open(path, "w") as f:
             for item in parsedFile:
@@ -50,6 +50,9 @@ class writer:
                             print(f"Wrote RB: {item.get('valor')}")
                     except Exception as e:
                         print(f"Error processing item {index}: {e}, item: {item}")
+            f.close()
+
+            subprocess.run(["latexindent", path, "-w"])
     
         except Exception as e:
             print(f"Failed to open or write to file at {path}: {e}")

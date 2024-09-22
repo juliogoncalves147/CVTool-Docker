@@ -1,0 +1,49 @@
+
+\begin{document}
+\selectlanguage{english}
+\begin{europecv}
+\ecvpersonalinfo{}
+\section{Work experience}
+\namedItem[Full Professor]{
+\emph{Dates}: since
+\daterange{2023}    \\
+
+\emph{Employer}: University of Minho, Portugal    \\
+
+\emph{Sector}: Dept. of Informatics    \\
+
+\emph{Position held}: Full Professor    \\
+
+\emph{Main activities}: teaching
+\&{} research}
+\section{Education and training}
+\subsection{Academic education}
+\namedItem[Lecturer]{
+\emph{Dates}:
+\daterange{2020}    \\
+
+\emph{Employer}: University of Minho, Portugal    \\
+
+\emph{Sector}: Dept. of Informatics
+\&{} Control    \\
+
+\emph{Position held}: Assistant lecturer    \\
+
+\emph{Main activities}: teaching
+\&{} research}
+\subsection{PhD}
+\namedItem[Lecturer]{
+\emph{Dates}:
+\daterange{2020}    \\
+
+\emph{Employer}: University of Minho, Portugal    \\
+
+\emph{Sector}: Dept. of Informatics
+\&{} Control    \\
+
+\emph{Position held}: Assistant lecturer    \\
+
+\emph{Main activities}: teaching
+\&{} research}
+\end{europecv}
+\end{document}

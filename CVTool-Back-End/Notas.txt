@@ -5,7 +5,7 @@
 -- Adicionar um beautifier ao .tex depois do processamento.
 
 
-
+testes -> python3.9 -m pytest
 
 Inputs datas possiveis:
 
@@ -34,7 +34,7 @@ dddd
 # Gramática do tipo EBNF
 # Notas Sugestoes
 # -- Trocar  SELECT * FILTER WHERE | FILTER BY     conditions
-# -- TRocar  SHOW * FILTERED BY
+# -- TRocar  SHOW  * FILTERED BY
 # -- FILTER PROEX BY DATE > 2005;
 
 #  -- Exemplos de Querys possiveis de fazer -- 

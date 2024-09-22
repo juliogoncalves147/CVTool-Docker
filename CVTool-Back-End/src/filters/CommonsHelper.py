@@ -26,7 +26,11 @@ def groupBlocks(data):
         else:
             current_block.append(item)
     
-
+    with open('blocks.txt', 'w') as f:
+        for block in blocks:
+            for item in block:
+                f.write(f"{item}\n")
+            f.write("\n")
     return blocks
 
 def remove_invisible_characters(parsed_file):

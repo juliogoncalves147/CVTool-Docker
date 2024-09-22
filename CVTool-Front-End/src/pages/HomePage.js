@@ -59,7 +59,7 @@ function HomePage() {
           </Typography>
           <Button
             color="inherit"
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/juliogoncalvess/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -67,7 +67,7 @@ function HomePage() {
           </Button>
           <Button
             color="inherit"
-            href="https://github.com/yourprofile"
+            href="https://github.com/juliogoncalves147"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -225,6 +225,31 @@ function HomePage() {
                   }}
                 >
                   <Typography variant="h5" color="primary" gutterBottom>
+                    SubSection Filter
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="textSecondary"
+                    textAlign="justify"
+                    sx={{ flexGrow: 1 }}
+                  >
+                    Streamline your resume by subsection. Customize your resume by
+                    applying filters to specified subsections.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    padding: "2rem",
+                    textAlign: "left",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Typography variant="h5" color="primary" gutterBottom>
                     Reorder Filter
                   </Typography>
                   <Typography
@@ -292,136 +317,145 @@ function HomePage() {
               </Grid>
 
               {/* Part 2: DSL Explanation and Query Examples */}
-              <Grid item xs={12}>
-                <Paper
-                  elevation={3}
-                  sx={{
-                    padding: "2rem",
-                    textAlign: "left",
-                    width: "100%",
-                    maxWidth: "1200px",
-                    margin: "0 auto",
-                  }}
-                >
-                  <Typography variant="h5" color="primary" gutterBottom>
-                    DSL (Domain-Specific Language) Explanation
-                  </Typography>
-                  <Typography variant="body1" color="textSecondary">
-                    The Domain-Specific Language (DSL) defined by us provides a
-                    structured way to query and manipulate resumes using
-                    specific commands. It allows users to perform operations
-                    such as selecting sections, filtering by criteria like dates
-                    or themes, translating content into different languages,
-                    exporting data, and reordering resume sections. The DSL aims
-                    to simplify the management and customization of resumes by
-                    offering a clear syntax for executing these tasks
-                    efficiently.
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    color="primary"
-                    gutterBottom
-                    style={{ marginTop: "1.5rem" }}
-                  >
-                    Query Examples
-                  </Typography>
-                  <Typography variant="body1" color="textSecondary">
-                    <p>
-                      <strong>Example 1:</strong> Selecting specific sections
-                    </p>
-                    <p>
-                      SELECT 'Work experience', 'Education'
-                      <br />
-                      -- Returns only the sections 'Work experience' and
-                      'Education'
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 2:</strong> Selecting all sections
-                    </p>
-                    <p>
-                      SELECT *<br />
-                      -- Returns all sections
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 3:</strong> Filtering a specific section
-                      by date
-                    </p>
-                    <p>
-                      SELECT * WHERE SECTION = 'Education' AND DATE >= '2010'
-                      <br />
-                      -- Returns the entire file, filtering the 'Education'
-                      section by date
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 4:</strong> Filtering multiple sections by
-                      different dates
-                    </p>
-                    <p>
-                      SELECT * WHERE (SECTION = 'Education Universitary' AND
-                      DATE > '2010') OR (SECTION = 'Professional Experience' AND
-                      DATE = '2010')
-                      <br />
-                      -- Returns the entire file, filtering specified sections
-                      by different dates
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 5:</strong> Filtering the entire file by
-                      date
-                    </p>
-                    <p>
-                      SELECT * WHERE DATE > '2010'
-                      <br />
-                      -- Returns the entire file, filtering by date
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 6:</strong> Filtering the entire file by
-                      date, except for a specific section
-                    </p>
-                    <p>
-                      SELECT * WHERE SECTION != 'Education' AND DATE > '2010'
-                      <br />
-                      -- Returns the entire file, filtering by date, excluding
-                      the 'Education' section
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 7:</strong> Filtering file for specific
-                      sections and date
-                    </p>
-                    <p>
-                      SELECT 'Professional Experience', 'Education' WHERE DATE >
-                      '2010'
-                      <br />
-                      -- Returns only the sections 'Professional Experience' and
-                      'Education' with dates greater than 2010
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 8:</strong> Translating resume into
-                      another language
-                    </p>
-                    <p>
-                      TRANSLATE FROM 'fr' TO 'en';
-                      <br />
-                      -- Translates the resume from French to English
-                    </p>
-                    <br />
-                    <p>
-                      <strong>Example 9:</strong> Reordering sections
-                    </p>
-                    <p>
-                      REORDER "Professional Experience", "Education", "Projects"
-                      <br />
-                      -- Reorders the sections of the resume as specified
-                    </p>
-                  </Typography>
-                </Paper>
-              </Grid>
+              
+
+<Grid item xs={12}>
+  <Paper
+    elevation={3}
+    sx={{
+      padding: "2rem",
+      textAlign: "left",
+      width: "100%",
+      maxWidth: "1200px",
+      margin: "0 auto",
+    }}
+  >
+    <Typography variant="h5" color="primary" gutterBottom>
+      DSL (Domain-Specific Language) Explanation
+    </Typography>
+    <Typography variant="body1" color="textSecondary">
+      The Domain-Specific Language (DSL) defined by us provides a structured way to query and manipulate resumes using specific commands. It allows users to perform operations such as selecting sections, filtering by criteria like dates or themes, translating content into different languages, exporting data, and reordering resume sections. The DSL aims to simplify the management and customization of resumes by offering a clear syntax for executing these tasks efficiently.
+    </Typography>
+    <Typography variant="h5" color="primary" gutterBottom style={{ marginTop: "1.5rem" }}>
+      Query Examples
+    </Typography>
+    <Typography variant="body1" color="textSecondary">
+      <p>
+        <strong>Example 1:</strong> Selecting specific sections
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> 'Work experience', 'Education' </span>
+        <br />
+        -- Returns only the sections 'Work experience' and 'Education'
+      </p>
+      <br />
+      <p>
+        <strong>Example 2:</strong> Selecting all sections
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> * </span>
+        <br />
+        -- Returns all sections
+      </p>
+      <br />
+      <p>
+        <strong>Example 3:</strong> Filtering a specific section by date
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> * </span> 
+        <span className="query-command"> Filtered By </span> 
+        <span className="query-parameter">SECTION = 'Education' AND DATE >= '2010'</span>
+        <br />
+        -- Returns the entire file, filtering the 'Education' section by date
+      </p>
+      <br />
+      <p>
+        <strong>Example 4:</strong> Filtering multiple sections by different dates
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> * </span>
+        <span className="query-command"> Filtered By </span>
+        <span className="query-parameter"> (section = 'Education Universitary' AND DATE > '2010') OR (subsection = 'Chair person' AND DATE = '2010')</span>
+        <br />
+        -- Returns the entire file, filtering specified sections by different dates
+      </p>
+      <br />
+      <p>
+        <strong>Example 5:</strong> Filtering the entire file by date
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> * </span>
+        <span className="query-command"> Filtered By </span>
+        <span className="query-parameter"> DATE > '2010'</span>
+        <br />
+        -- Returns the entire file, filtering by date
+      </p>
+      <br />
+      <p>
+        <strong>Example 6:</strong> Filtering the entire file by date, except for a specific section
+      </p>
+      <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> * </span>
+        <span className="query-command"> Filtered By </span> 
+        <span className="query-parameter"> SECTION != 'Education' and DATE > '2010' </span>
+        <br />
+        -- Returns the entire file, filtering by date, excluding the 'Education' section
+      </p>
+      <br />
+      <p>
+        <strong>Example 7:</strong> Filtering file for specific sections and date
+      </p>
+      <p>
+       <span className="query-command"> Show </span>  
+        <span className="query-parameter">'Professional Experience', 'Education' </span> 
+        <span className="query-command"> Filtered By </span>  
+        <span className="query-parameter"> DATE > '2010' </span>
+        <br />
+        -- Returns only the sections 'Professional Experience' and 'Education' with dates greater than 2010
+      </p>
+      <br />
+      <p>
+        <strong>Example 8:</strong> Selecting specific sections, filtering subsection for date
+      </p>
+      <p>
+       <span className="query-command"> Show </span>  
+        <span className="query-parameter">'Professional Experience', 'Education' </span> 
+        <span className="query-command"> Filtered By </span>  
+        <span className="query-parameter"> subsection = 'Chair person' and date > '2010' </span>
+        <br />
+        -- Returns only the sections 'Professional Experience' and 'Education' filtering the subsection 'Chair person' by date
+      </p>
+      <br />
+      <p>
+        <strong>Example 9:</strong> Translating resume into another language
+      </p>
+      <p>
+        <span className="query-command"> TRANSLATE FROM </span>
+        <span className="query-parameter"> 'fr' ;</span>
+        <span className="query-command"> TO </span>
+        <span className="query-parameter"> 'en' ;</span>
+        <br />
+        -- Translates the resume from French to English
+      </p>
+      <br />
+      <p>
+        <strong>Example 10:</strong> Reordering sections
+      </p>
+      <p>
+        <span className="query-command"> REORDER </span>
+        <span className="query-parameter"> 'Professional Experience', 'Education', 'Projects'</span>
+        <br />
+        -- Reorders the sections of the resume as specified
+      </p>
+    </Typography>
+  </Paper>
+</Grid>
             </Grid>
           </Box>
         </Element>

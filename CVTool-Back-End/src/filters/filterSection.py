@@ -1,6 +1,5 @@
 from .CommonsHelper import sortByIndexAsc
 
-
 def checkToEndCommands(parsedData):
     toEndCommands = []
     beginCommand = False
@@ -29,6 +28,13 @@ def getSection(parsedData, sectionName):
             lista.append(item)
     return lista
 
+def getSubSection(parsedData, sectionName):
+    lista = []
+    for item in parsedData:
+        if(item.get("subsection") == sectionName):
+            lista.append(item)
+    return lista
+
 def deleteSection(parsedData, startId, endId):
     result = []
     for item in parsedData:
@@ -39,7 +45,6 @@ def deleteSection(parsedData, startId, endId):
             print(f"Removing item with id: {item_id}")
     return result
 
-
 def addSection(parsedData, parsedSection):
     parsedData.extend(parsedSection)
     return sortByIndexAsc(parsedData)
@@ -48,6 +53,13 @@ def getWithoutSection(parsedData, sectionName):
     lista = []
     for item in parsedData:
         if(item.get("section") != sectionName):
+            lista.append(item)
+    return lista
+
+def getWithoutSubSection(parsedData, sectionName):
+    lista = []
+    for item in parsedData:
+        if(item.get("subsection") != sectionName):
             lista.append(item)
     return lista
 
@@ -67,7 +79,27 @@ def filterSection(parsedData, section_names):
     
     sortedData = sortByIndexAsc(lista)
     return sortedData
-
         
 def filterSectionQuery(parsedData, sectionsListNames):
     return filterSection(parsedData, sectionsListNames)
+
+def reorderSectionsQuery(parsedData, sectionsListNames):
+    lista = []
+    toEndCommands = checkToEndCommands(parsedData)
+    toEndCommands.reverse()
+    for item in parsedData:
+        if item.get("section") == "":
+            lista.append(item)
+
+    for sectionName in sectionsListNames:
+        section = getSection(parsedData, sectionName)
+        lista.extend(section)
+        
+    
+    indice = 1
+    for item in toEndCommands:
+        itens = addEndCommands(item, indice)
+        indice += 5
+        lista.extend(itens)
+    
+    return lista
