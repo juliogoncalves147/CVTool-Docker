@@ -6,7 +6,8 @@ from lark import UnexpectedCharacters
 from src.parsers.cvParser import CVParser
 from src.parsers.dslParser import DSLParser
 from src.filters.filterDate import filterDateQuery
-from src.filters.filterSection import filterSectionQuery, getSection, deleteSection, addSection, getWithoutSection, getSubSection , getWithoutSubSection, reorderSectionsQuery
+from src.filters.filterTheme import filterThemeQuery
+from src.filters.filterSection import filterSectionQuery, getSection, deleteSection, addSection, getWithoutSection, getSubSection , getWithoutSubSection, reorderSectionsQuery, dropSectionsQuery
 from src.filters.translate import translateQuery
 from src.writer import Writer
 
@@ -66,6 +67,9 @@ class Controller:
 
             elif (self.__isReorder(item)):
                 file = self.__processReorderCommand(parsed_file, item)
+                
+            elif (self.__isDrop(item)):
+                file = self.__processDropCommand(parsed_file, item)
 
 
         Writer.writeStructuredData(parsed_file, "run_logs/Filtered_Data_Struct.txt") 
@@ -125,6 +129,23 @@ class Controller:
         
         return file
     
+    def __processDropCommand(self, parsed_file, item):
+    # Check for the presence of 'sectionlist' or 'subsectionlist' in the dictionary
+        #print("Processing Drop Command")
+        sectionlist = item.get("sectionlist")
+        #print("Section List: " + str(sectionlist))
+    # Initialize file as None
+        file = None
+        file = dropSectionsQuery(parsed_file, sectionlist)
+
+        #print("File: " + str(len(file)))
+    # Handle case where section or subsection doesn't exist
+        if file is None:
+            print("Query Error: Specified section or subsection doesn't exist.")
+            return KeyError
+
+        return file
+    
     def __processTranslateCommand(self, parsed_file, item):
         # Process Translate Query
         return translateQuery(parsed_file, item.get("source"), item.get("output"))
@@ -169,10 +190,17 @@ class Controller:
     
     def __isDateFilter(self, clause):
         return clause.get("field").lower() == "DATE".lower()
+    
+    def __isThemeFilter(self, clause):
+        return clause.get("field").lower() == "THEME".lower()
 
     def __isReorder(self, item):
         # Check if the query is a REORDER command
         return item.get("queryField").lower() == "REORDER".lower()
+
+    def __isDrop(self, item):
+        # Check if the query is a DROP command
+        return item.get("queryField").lower() == "DROP".lower()
 
     def __isTranslate(self, item):
         # Check if the query is a TRANSLATE command
@@ -260,7 +288,38 @@ class Controller:
                     else:
                         file = deleteSection(file, startId, endId)
                         file = addSection(file, section)
+            elif self.__isThemeFilter(clause):
+                if isSubSection:
+                    startId = int(subsection[0].get("id"))
+                    endId = int(subsection[-1].get("id"))
 
+                    subsection = filterThemeQuery(subsection, clause.get("value"), clause.get("operator"))
+
+                    if subsectionDifferent:
+                        file = addSection(subsection, keepSubSection)
+                        subsectionDifferent = False
+                        keepSubSection = None
+
+                    else:
+                        file = deleteSection(file, startId, endId)
+                        file = addSection(file, subsection)
+
+                    isSubSection = False
+
+                else:
+                    startId = int(section[0].get("id"))
+                    endId = int(section[-1].get("id"))
+
+                    section = filterThemeQuery(section, clause.get("value"), clause.get("operator"))
+
+                    if sectionDifferent:
+                        file = addSection(section, keepSection)
+                        sectionDifferent = False
+                        keepSection = None
+
+                    else:
+                        file = deleteSection(file, startId, endId)
+                        file = addSection(file, section)
         return file
     
     def __checkSectionQuery(self,sectionlist, group):

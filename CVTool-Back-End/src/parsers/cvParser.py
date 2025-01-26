@@ -6,16 +6,13 @@ gramatica = r'''//
 //
 start: document
 
-document: (PERC | command | element | LB document RB)*
+document: (command | element | LB document RB)*
 
-element: /[^\{\}\\\n]+/ 
+element: /[^\{\}\n\\]+/ 
 
 command: "\\" /[a-zA-Z\.\^\%úáíóãé'0-9\-çã\'\\\,\#\+\`\(\)\@\&\:\/\~\?\ÿ\;õêàô\ª\º]+/ (( LB (document)* RB )*)
 
-
 LB: "{"
-
-PERC: "%"
 
 RB: "}"
 

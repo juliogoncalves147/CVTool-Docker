@@ -1,4 +1,4 @@
-{'id': '1', 'tipo': 'command', 'valor': 'documentclass', 'nivel': 0, 'section': ''},
+a{'id': '1', 'tipo': 'command', 'valor': 'documentclass', 'nivel': 0, 'section': ''},
 {'id': '2', 'tipo': 'element', 'valor': '[helvetica,narrow,english,a4paper,openbib]', 'nivel': 0, 'section': '', 'reserved': False},
 {'id': '3', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': ''},
 {'id': '4', 'tipo': 'element', 'valor': 'europecv', 'nivel': 1, 'section': '', 'reserved': False},

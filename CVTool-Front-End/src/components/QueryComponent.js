@@ -71,15 +71,27 @@ function QueryComponent({ onQuerySubmit, queryHistory, fileName }) {
   return (
     <div className="query-container">
       <form onSubmit={handleSubmit}>
-        <TextField
-          id="standard-basic"
-          label="Write a new Query"
-          variant="standard"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+      <TextField
+  id="standard-basic"
+  label="Write a new Query"
+  variant="standard"
+  value={query}
+  onChange={(e) => setQuery(e.target.value)}
+  sx={{
+    '& .MuiInputLabel-root': {
+      color: '#004643',  // Change the color of the label
+    },
+    '& .MuiInput-underline:before': {
+      borderBottomColor: '#004643', // Change the default color of the underline
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#004643', // Change the color of the underline when focused
+    },
+  }}
+/>
+
         <Button
-          style={{ marginTop: "1%" }}
+          style={{ marginTop: "1%", backgroundColor: "#004643", color: "#FAF4D3" }}
           variant="contained"
           onClick={handleSubmit}
           type="submit"

@@ -120,7 +120,7 @@ function ToolPage() {
     <div className="app-container">
       <div className="navbar">
         <Button
-          style={{ backgroundColor: "#ffffff" }}
+          style={{ backgroundColor: "#FFFFFF", color: "#004643" }}
           variant="outlined"
           startIcon={<UploadIcon />}
           onClick={handleUploadClick}
@@ -128,24 +128,36 @@ function ToolPage() {
           Upload
         </Button>
         <div className="navbar-content">
-        <h1 className="navbar-title">Resume Management Tool for LaTeX</h1>
+        <h1 className="navbar-title"  style={{ color: '#FAF4D3'}}> --- Resume Management Tool for LaTeX --- </h1>
         <IconButton
           component={Link}
           to="/"
-          style={{ color: '#ffffff', marginLeft: 'auto' }}
+          style={{ color: '#FAF4D3', marginLeft: 'auto' }}
           aria-label="home">
           <HomeIcon />
         </IconButton>
       </div>
-        <Button
-          style={{ backgroundColor: "#ffffff" }}
-          variant="outlined"
-          startIcon={<DownloadIcon />}
-          onClick={handleDownloadClick}
-          disabled={!fileData}
-        >
-          Download
-        </Button>
+      <Button
+  sx={{
+    backgroundColor: "#FFFFFF",  // Background color
+    color: "#004643",            // Text color
+    borderColor: "#004643",      // Border color for the outlined button
+    '&:hover': {                 // Hover state (optional)
+      backgroundColor: "#E0D1A3", // Lighter background on hover
+    },
+    '&.Mui-disabled': {
+      backgroundColor: "#D1D1D1",  // Disabled background color
+      color: "#B0B0B0",             // Disabled text color
+      borderColor: "#B0B0B0",       // Disabled border color
+    },
+  }}
+  variant="outlined"
+  startIcon={<DownloadIcon />}
+  onClick={handleDownloadClick}
+  disabled={!fileData}
+>
+  Download
+</Button>
       </div>
       <input
         type="file"
@@ -175,7 +187,7 @@ function ToolPage() {
                   </Typography>
                 </div>
                 <Button
-                  style={{ marginLeft: "10px" }}
+                  style={{ marginLeft: "10px", backgroundColor: "#004643" }}
                   variant="contained"
                   startIcon={<RefreshIcon />}
                   onClick={handleRefreshClick}
@@ -199,8 +211,8 @@ function ToolPage() {
           position: "fixed",
           bottom: "35px",
           left: "25px", // Position it to the left bottom corner
-          backgroundColor: "#007bff", // Blue background
-          color: "#ffffff", // White icon
+          backgroundColor: "#004643", // Blue background
+          color: "#FAF4D3", // White icon
           zIndex: 1000,
         }}
       >
@@ -215,8 +227,8 @@ function ToolPage() {
             left: "20px", // Align with the help icon on the left
             width: "50%",
             padding: "15px",
-            backgroundColor: "#295F98", // Blue background for the suggestion box
-            color: "#ffffff", // White text for the suggestion box
+            backgroundColor: "#004643", // Blue background for the suggestion box
+            color: "#FAF4D3", // White text for the suggestion box
             zIndex: 1000,
           }}
         >
@@ -229,7 +241,7 @@ function ToolPage() {
       right: 0,               // Align to the right
       top: 0,                 // Align to the top
       padding: 0,
-      color: "#ffffff"
+      color: "#FAF4D3"
     }}
   >
     <CloseIcon />

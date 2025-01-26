@@ -54,64 +54,13 @@
 {'id': '272', 'tipo': 'element', 'valor': ' research', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
 {'id': '273', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
 
-{'id': '274', 'tipo': 'command', 'valor': 'namedItem', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '275', 'tipo': 'element', 'valor': '[Lecturer]', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '276', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '277', 'tipo': 'command', 'valor': 'emph', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '278', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '279', 'tipo': 'element', 'valor': 'Dates', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '280', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '281', 'tipo': 'element', 'valor': ': ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '282', 'tipo': 'command', 'valor': 'daterange', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '283', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '284', 'tipo': 'element', 'valor': '2000', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '285', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '286', 'tipo': 'element', 'valor': '  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '287', 'tipo': 'command', 'valor': '\\', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '288', 'tipo': 'element', 'valor': ' ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '289', 'tipo': 'command', 'valor': 'emph', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '290', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '291', 'tipo': 'element', 'valor': 'Employer', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '292', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '293', 'tipo': 'element', 'valor': ': University of Minho, Portugal  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '294', 'tipo': 'command', 'valor': '\\', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '295', 'tipo': 'element', 'valor': ' ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '296', 'tipo': 'command', 'valor': 'emph', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '297', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '298', 'tipo': 'element', 'valor': 'Sector', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '299', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '300', 'tipo': 'element', 'valor': ': Dept. of Informatics  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '301', 'tipo': 'command', 'valor': '&', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '302', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '303', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '304', 'tipo': 'element', 'valor': ' Control  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '305', 'tipo': 'command', 'valor': '\\', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '306', 'tipo': 'element', 'valor': ' ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '307', 'tipo': 'command', 'valor': 'emph', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '308', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '309', 'tipo': 'element', 'valor': 'Position held', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '310', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '311', 'tipo': 'element', 'valor': ': Assistant lecturer  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '312', 'tipo': 'command', 'valor': '\\', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '313', 'tipo': 'element', 'valor': ' ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '314', 'tipo': 'command', 'valor': 'emph', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '315', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '316', 'tipo': 'element', 'valor': 'Main activities', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '317', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '318', 'tipo': 'element', 'valor': ': teaching  ', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '319', 'tipo': 'command', 'valor': '&', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '320', 'tipo': 'LB', 'valor': '{', 'nivel': 2, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '321', 'tipo': 'RB', 'valor': '}', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '322', 'tipo': 'element', 'valor': ' research', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': False}
-{'id': '323', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '274', 'tipo': 'command', 'valor': 'end', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '275', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '276', 'tipo': 'element', 'valor': 'europecv', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': True}
+{'id': '277', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
 
-{'id': '324', 'tipo': 'command', 'valor': 'end', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '325', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '326', 'tipo': 'element', 'valor': 'europecv', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': True}
-{'id': '327', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
-
-{'id': '328', 'tipo': 'command', 'valor': 'end', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '329', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
-{'id': '330', 'tipo': 'element', 'valor': 'document', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': True}
-{'id': '331', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '278', 'tipo': 'command', 'valor': 'end', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '279', 'tipo': 'LB', 'valor': '{', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD'}
+{'id': '280', 'tipo': 'element', 'valor': 'document', 'nivel': 1, 'section': 'Education and training', 'subsection': 'PhD', 'reserved': True}
+{'id': '281', 'tipo': 'RB', 'valor': '}', 'nivel': 0, 'section': 'Education and training', 'subsection': 'PhD'}
 

@@ -4,8 +4,8 @@ import { GitHub, LinkedIn } from "@mui/icons-material";
 import { styled } from "@mui/system";
 
 const FooterContainer = styled("footer")({
-  background: "linear-gradient(to right, #0d47a1, #42a5f5)",
-  color: "#fff",
+  background: "#0C1618",
+  color: "#FAF4D3",
   padding: "20px",
   textAlign: "center",
   position: "relative",

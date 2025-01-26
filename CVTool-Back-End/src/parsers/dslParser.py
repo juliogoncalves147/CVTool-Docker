@@ -8,7 +8,7 @@ gramatica = r"""//
 //
 start: query
 
-query: selectquery | translatequery | reorder_query
+query: selectquery | translatequery | reorder_query | drop_query
 
 selectquery: "SHOW"i sectionlist whereclause?
 
@@ -18,7 +18,11 @@ translatequery: "TRANSLATE"i "FROM"i source "TO"i output
 
 reorder_query: "REORDER"i sectionlist
 
+drop_query: "DROP"i sectionlistdrop
+
 sectionlist: ALL | section (VIRG section)*
+
+sectionlistdrop: section (VIRG section)*
 
 section: NAME 
 
@@ -102,7 +106,7 @@ class MyInterpreter(Interpreter):
             return self.visit(elemento)
 
     def selectquery(self, tree):
-        print(" -- Show Query --")
+        #print(" -- Show Query --")
         query = {}
         query["queryField"] = "SHOW"
         query["clauses"] = ""
@@ -140,6 +144,18 @@ class MyInterpreter(Interpreter):
                 t = self.visit(elemento)
             else:
                 return elemento
+            
+    def drop_query(self, tree):
+        print(" -- Drop Query --")
+        query = {}
+        query["queryField"] = "DROP"
+        query["sectionlist"] = ""
+        for elemento in tree.children:
+            if type(elemento) == Tree:
+                t = self.visit(elemento)
+                if elemento.data == "sectionlistdrop":
+                    query["sectionlist"] = t
+        return query
 
     def reorder_query(self, tree):
         print(" -- Reorder Query --")
@@ -161,6 +177,14 @@ class MyInterpreter(Interpreter):
             else:
                 if elemento.type == "ALL":
                     t.append("ALL")
+        return t
+    
+    def sectionlistdrop(self, tree):
+        t = []
+        for elemento in tree.children:
+            if type(elemento) == Tree:
+                t.append(str(self.visit(elemento)))
+        
         return t
 
     def section(self, tree):

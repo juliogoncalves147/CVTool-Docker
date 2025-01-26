@@ -41,8 +41,8 @@ def deleteSection(parsedData, startId, endId):
         item_id = int(item.get("id"))
         if not (startId <= item_id <= endId):
             result.append(item)
-        else:
-            print(f"Removing item with id: {item_id}")
+        #else:
+            #print(f"Removing item with id: {item_id}")
     return result
 
 def addSection(parsedData, parsedSection):
@@ -102,4 +102,17 @@ def reorderSectionsQuery(parsedData, sectionsListNames):
         indice += 5
         lista.extend(itens)
     
+    return lista
+
+def dropSectionsQuery(parsedData, sectionsListNames):
+    lista = []
+    print("Sections to drop:", sectionsListNames)
+    for item in parsedData:
+        section = item.get("section", "")
+        subsection = item.get("subsection", "")
+        
+        # Append items that do NOT match any section/subsection in sectionsListNames
+        if section not in sectionsListNames and subsection not in sectionsListNames:
+            lista.append(item)
+
     return lista

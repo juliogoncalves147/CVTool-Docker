@@ -14,14 +14,22 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Link as ScrollLink, Element } from "react-scroll";
 import "./HomePage.css";
+import homeImage from '../images/home.png';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2",
+      main: "#004643",
     },
     secondary: {
-      main: "#fff",
+      main: "#FAF4D3",
+    },
+    background: {
+      default: "#0C1618", // Main background color
+    },
+    text: {
+      primary: "#FAF4D3", // Main text color
+      secondary: "#FAF4D3", // Accent text color
     },
   },
   typography: {
@@ -51,83 +59,128 @@ function HomePage() {
     <ThemeProvider theme={theme}>
       <AppBar
         position="sticky"
-        sx={{ background: "linear-gradient(to right, #0d47a1, #42a5f5)" }}
+        sx={{ background: "#0C1618" }}
       >
         <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Typography variant="h5"color="textSecondary" style={{ flexGrow: 1 }}>
             Resume Management Tool for LaTeX
           </Typography>
-          <Button
-            color="inherit"
-            href="https://www.linkedin.com/in/juliogoncalvess/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon />
+          <ScrollLink to="section1" smooth={true} duration={500}>
+          <Button color="secondary" sx={{ color: "#FAF4D3" }}>
+            Home Page
           </Button>
-          <Button
-            color="inherit"
-            href="https://github.com/juliogoncalves147"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon />
+        </ScrollLink>
+
+        <Button
+               color="secondary" sx={{ color: "#FAF4D3" }}
+              href="/tool"
+            >
+              Tool
+            </Button>
+
+        {/* Features Button */}
+        <ScrollLink to="section2" smooth={true} duration={500}>
+          <Button color="secondary" sx={{ color: "#FAF4D3" }}>
+            Features
           </Button>
+        </ScrollLink>
+
+        {/* Documentation Button */}
+        <ScrollLink to="section3" smooth={true} duration={500}>
+          <Button color="secondary" sx={{ color: "#FAF4D3" }}>
+            Documentation
+          </Button>
+        </ScrollLink>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="lg">
-        <Element name="section1" className="element">
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            height="100vh"
-            textAlign="center"
-            background="linear-gradient(to right, #0d47a1, #42a5f5)"
-          >
-            <Typography variant="h1" color="primary">
-              Welcome to the Resume Management Tool for LaTeX
-            </Typography>
-            <Typography variant="h2" color="textSecondary">
-              Simplify your resume creation process with our tool
-            </Typography>
-            <Typography
-              variant="body1"
-              color="textSecondary"
-              sx={{
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
+      <Container 
+  maxWidth={false} 
+  sx={{ width: "100%", background: "#0C1618", padding: 0 }}
+>
+  <Element name="section1" className="element">
+  <Grid
+  container
+  spacing={0}
+  alignItems="center"
+  sx={{
+    minHeight: "100vh", 
+  }}
+>
+      {/* Left Side Content */}
+      <Grid 
+    item 
+    xs={12} 
+    md={6}
+    sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      p: { xs: 2, md: 6 },
+    }}
+  >
+    <Box 
+      textAlign="left" 
+      maxWidth="500px"
+    >
+          <Typography variant="h1" color="textSecondary" gutterBottom>
+            Welcome to the Resume Management Tool
+          </Typography>
+          <Typography variant="h2" color="primary" gutterBottom>
+            Simplify Your Resume Creation
+          </Typography>
+          <Typography variant="body1" color="textSecondary" gutterBottom>
+            Manage and generate LaTeX resumes in seconds. Start now to
+            take control of your professional documents with ease.
+          </Typography>
+          <Box mt={4} display="flex" gap={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              href="/tool"
             >
-              Our tool helps you manage and generate new Latex CVs in seconds.
-              Start exploring now!
-            </Typography>
-            <div
-              style={{ display: "flex", justifyContent: "center", gap: "1rem" }}
-            >
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                href="/tool"
-              >
-                Try now
+              Try Now
+            </Button>
+            <ScrollLink to="section2" smooth duration={1000}>
+              <Button variant="outlined" color="primary" size="large">
+                Learn More
               </Button>
-              <ScrollLink
-                to="section2"
-                smooth
-                duration={1000}
-                style={{ textDecoration: "none" }}
-              >
-                <Button variant="contained" color="primary" size="large">
-                  Learn More
-                </Button>
-              </ScrollLink>
-            </div>
+            </ScrollLink>
           </Box>
-        </Element>
+        </Box>
+      </Grid>
+
+      {/* Right Side Image */}
+      <Grid 
+    item 
+    xs={12} 
+    md={6} 
+    sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      p: { xs: 2, md: 6 },
+    }}
+  >
+    <Box 
+      component="img"
+      src={homeImage}
+      alt="Professional Resume Illustration"
+      sx={{
+        width: "100%",
+        maxWidth: "500px",
+        borderRadius: "8px",
+        boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+        animation: "fadeIn 1.5s ease",
+      }}
+    />
+  </Grid>
+    </Grid>
+  </Element>
+</Container>
+
+
+        <Container maxWidth="lg">
 
         <Element name="section2" className="element">
           <Box mt={5} py={5} textAlign="center">
@@ -151,7 +204,7 @@ function HomePage() {
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="textSecondary"
+                    color="primary"
                     textAlign="justify"
                     sx={{ flexGrow: 1 }}
                   >
@@ -177,7 +230,7 @@ function HomePage() {
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="textSecondary"
+                    color="primary"
                     textAlign="justify"
                     sx={{ flexGrow: 1 }}
                   >
@@ -199,11 +252,36 @@ function HomePage() {
                   }}
                 >
                   <Typography variant="h5" color="primary" gutterBottom>
+                    Theme Filter
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="primary"
+                    textAlign="justify"
+                    sx={{ flexGrow: 1 }}
+                  >
+                     Simplify your resume customization with the keyword filter.
+                    Set a specific keyword, and seamlessly identify and highlight relevant tokens of your resume. 
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    padding: "2rem",
+                    textAlign: "left",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Typography variant="h5" color="primary" gutterBottom>
                     Section Filter
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="textSecondary"
+                    color="primary"
                     textAlign="justify"
                     sx={{ flexGrow: 1 }}
                   >
@@ -229,7 +307,7 @@ function HomePage() {
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="textSecondary"
+                    color="primary"
                     textAlign="justify"
                     sx={{ flexGrow: 1 }}
                   >
@@ -254,7 +332,7 @@ function HomePage() {
                   </Typography>
                   <Typography
                     variant="body1"
-                    color="textSecondary"
+                    color="primary"
                     textAlign="justify"
                     sx={{ flexGrow: 1 }}
                   >
@@ -267,7 +345,8 @@ function HomePage() {
             </Grid>
           </Box>
         </Element>
-
+        </Container>
+        <Container>
         <Element name="section3" className="element">
           <Box mt={5} py={5} textAlign="center">
             <Typography variant="h2" color="primary" gutterBottom>
@@ -289,7 +368,7 @@ function HomePage() {
                   <Typography variant="h5" color="primary" gutterBottom>
                     Restrictions
                   </Typography>
-                  <Typography variant="body1" color="textSecondary">
+                  <Typography variant="body1" color="primary">
                     <ol>
                       <li>Sem comentarios</li>
                       <li>Parentises todos espaçados ?</li>
@@ -333,13 +412,13 @@ function HomePage() {
     <Typography variant="h5" color="primary" gutterBottom>
       DSL (Domain-Specific Language) Explanation
     </Typography>
-    <Typography variant="body1" color="textSecondary">
+    <Typography variant="body1" color="primary">
       The Domain-Specific Language (DSL) defined by us provides a structured way to query and manipulate resumes using specific commands. It allows users to perform operations such as selecting sections, filtering by criteria like dates or themes, translating content into different languages, exporting data, and reordering resume sections. The DSL aims to simplify the management and customization of resumes by offering a clear syntax for executing these tasks efficiently.
     </Typography>
     <Typography variant="h5" color="primary" gutterBottom style={{ marginTop: "1.5rem" }}>
       Query Examples
     </Typography>
-    <Typography variant="body1" color="textSecondary">
+    <Typography variant="body1" color="primary">
       <p>
         <strong>Example 1:</strong> Selecting specific sections
       </p>
@@ -465,7 +544,7 @@ function HomePage() {
             <Typography variant="h2" color="primary">
               Try Now!
             </Typography>
-            <Typography variant="body1" color="textSecondary" paragraph>
+            <Typography variant="body1" color="primary" paragraph>
               Upload your LaTeX resume file and see the magic happen. Our tool
               will process your file and provide you a simple query language to
               manage your resume.
@@ -481,9 +560,25 @@ function HomePage() {
           </Box>
         </Element>
         <Box mt={5} textAlign="center">
-          <Typography variant="body2" color="textSecondary">
-            © 2024 Your Company Name. All rights reserved.
+          <Typography variant="body2" color="primary">
+            © 2024 Júlio Gonçalves. All rights reserved.
           </Typography>
+          <Button
+            color="inherit"
+            href="https://www.linkedin.com/in/juliogoncalvess/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon />
+          </Button>
+          <Button
+            color="inherit"
+            href="https://github.com/juliogoncalves147"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon />
+          </Button>
         </Box>
       </Container>
     </ThemeProvider>

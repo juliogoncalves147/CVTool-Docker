@@ -70,7 +70,7 @@ def filterByDate(dataBlocks, ano, logicalOperator):
 # Process date query
 def filterDateQuery(parsedData, ano, logicalOperator):
     dataBlocks = groupBlocks(parsedData)
-    print(f"Filtering data by date: {ano} {logicalOperator}")
-    print(f"Data blocks: {len(dataBlocks)}")
-    print(f"Data blocks: {dataBlocks}")
+    #print(f"Filtering data by date: {ano} {logicalOperator}")
+    #print(f"Data blocks: {len(dataBlocks)}")
+    #print(f"Data blocks: {dataBlocks}")
     return filterByDate(dataBlocks, ano, logicalOperator)
