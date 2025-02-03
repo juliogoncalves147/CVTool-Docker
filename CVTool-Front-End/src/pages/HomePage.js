@@ -303,7 +303,7 @@ function HomePage() {
                   }}
                 >
                   <Typography variant="h5" color="primary" gutterBottom>
-                    SubSection Filter
+                    Subsection Filter
                   </Typography>
                   <Typography
                     variant="body1"
@@ -366,29 +366,20 @@ function HomePage() {
                   }}
                 >
                   <Typography variant="h5" color="primary" gutterBottom>
-                    Restrictions
+                    Best Practices and Restrictions
                   </Typography>
                   <Typography variant="body1" color="primary">
                     <ol>
-                      <li>Sem comentarios</li>
-                      <li>Parentises todos espaçados ?</li>
+                      <li>Try to avoid adding comments.</li>
                       <li>
-                        Ter cuidado com as secções que manda traduzir por causa
-                        de referencias.
-                      </li>
+                      Be mindful when translating the resume—sometimes certain words may get translated that shouldn’t be.                      </li>
                       <li>
-                        Para o filtro das sections funcionar direito, os nomes
-                        das sections tem que ter texto limpo, sem comandos pelo
-                        meio do tipo "\comando"
-                      </li>
+                      Keep section names simple and avoid using special characters.                      </li>
                       <li>
-                        Para o filtro das datas funcionar, o utilizador deve
-                        adicionar o seguinte comando no inicio do curriculo:{" "}
+                      If you need to apply a date filter easily, add this custom command at the start of your document:{" "}
                         <code>{"\\newcommand{\\daterange}[1]{#1}"}</code>
                         <br></br>
-                        Todas as datas devem estar definidas usando este
-                        comando, para o filtro funcionar corretamente. Exemplo:{" "}
-                        <code>{"\\daterange{2014-2020}"}</code>
+                        Whenever you want to include a date range, use it like this:                        <code>{"\\daterange{2014-2020}"}</code>
                       </li>
                     </ol>
                   </Typography>
@@ -410,10 +401,35 @@ function HomePage() {
     }}
   >
     <Typography variant="h5" color="primary" gutterBottom>
-      DSL (Domain-Specific Language) Explanation
+      Custom Query Language Documentation
     </Typography>
     <Typography variant="body1" color="primary">
-      The Domain-Specific Language (DSL) defined by us provides a structured way to query and manipulate resumes using specific commands. It allows users to perform operations such as selecting sections, filtering by criteria like dates or themes, translating content into different languages, exporting data, and reordering resume sections. The DSL aims to simplify the management and customization of resumes by offering a clear syntax for executing these tasks efficiently.
+      The Domain-Specific Language defined provides a structured way to query and manipulate resumes using specific commands. It allows users to perform operations such as selecting sections, filtering by criteria like dates or themes, translating content into different language, reordering resume sections and deleting sections. The DSL aims to simplify the management and customization of resumes by offering a clear syntax for executing these tasks efficiently.
+    </Typography>
+    <Typography variant="h5" color="primary" gutterBottom style={{ marginTop: "1.5rem" }}>
+      Command Syntax
+    </Typography>
+    <Typography variant="body1" color="primary">
+    <p>
+        <span className="query-command"> Show </span> 
+        <span className="query-parameter"> Section List </span> 
+        <span className="query-command"> Filtered By </span> 
+        <span className="query-parameter">Conditions </span>
+      </p>
+      <p>
+        <span className="query-command"> Translate From </span>
+        <span className="query-parameter"> Language </span>
+        <span className="query-command"> TO </span>
+        <span className="query-parameter"> Language </span>
+      </p>
+      <p>
+        <span className="query-command"> Reorder </span>
+        <span className="query-parameter"> Section List </span>
+      </p>
+      <p>
+        <span className="query-command"> Drop </span>
+        <span className="query-parameter"> Section List </span>
+      </p>
     </Typography>
     <Typography variant="h5" color="primary" gutterBottom style={{ marginTop: "1.5rem" }}>
       Query Examples
@@ -426,7 +442,7 @@ function HomePage() {
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> 'Work experience', 'Education' </span>
         <br />
-        -- Returns only the sections 'Work experience' and 'Education'
+        -- Returns a file only with the ’Work Experience’ and ’Education’ sections
       </p>
       <br />
       <p>
@@ -436,31 +452,43 @@ function HomePage() {
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> * </span>
         <br />
-        -- Returns all sections
+        -- Returns a file with all sections. This should generate the same document
       </p>
       <br />
       <p>
-        <strong>Example 3:</strong> Filtering a specific section by date
+        <strong>Example 3:</strong> Filtering a Section by Date :
       </p>
       <p>
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> * </span> 
-        <span className="query-command"> Filtered By </span> 
-        <span className="query-parameter">SECTION = 'Education' AND DATE >= '2010'</span>
         <br />
-        -- Returns the entire file, filtering the 'Education' section by date
+        <span className="query-command"> Filtered By </span> 
+        <span className="query-parameter">Section = 'Education'</span>
+        <span className="query-command"> AND </span>
+        <span className="query-parameter">Date >= '2010'</span>
+        <br />
+        -- Returns the entire file, but filters the ’Education’ Section to include only entries
+        from 2010 onward.
       </p>
       <br />
       <p>
-        <strong>Example 4:</strong> Filtering multiple sections by different dates
+        <strong>Example 4:</strong> Filtering a Section by One Date and a Subsection by a Different Date :
       </p>
       <p>
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> * </span>
-        <span className="query-command"> Filtered By </span>
-        <span className="query-parameter"> (section = 'Education Universitary' AND DATE > '2010') OR (subsection = 'Chair person' AND DATE = '2010')</span>
         <br />
-        -- Returns the entire file, filtering specified sections by different dates
+        <span className="query-command"> Filtered By </span>
+        <span className="query-parameter"> (section = 'Education Universitary' </span>
+        <span className="query-command"> And </span>
+        <span className="query-parameter"> Date > '2010') </span>
+        <span className="query-command"> Or </span>
+        <span className="query-parameter"> (subsection = 'Chair person' </span>
+        <span className="query-command"> And </span>
+        <span className="query-parameter"> Date = '2010')</span>
+        <br />
+        -- Returns the entire file, filtering the specified section and subsection according to
+        the given dates. Note: The specified subsection is not associated with the given section.
       </p>
       <br />
       <p>
@@ -470,21 +498,24 @@ function HomePage() {
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> * </span>
         <span className="query-command"> Filtered By </span>
-        <span className="query-parameter"> DATE > '2010'</span>
+        <span className="query-parameter"> Date > '2010'</span>
         <br />
         -- Returns the entire file, filtering by date
       </p>
       <br />
       <p>
-        <strong>Example 6:</strong> Filtering the entire file by date, except for a specific section
+        <strong>Example 6:</strong> Filtering the document by Date, Except for a Specified Section:
       </p>
       <p>
         <span className="query-command"> Show </span> 
         <span className="query-parameter"> * </span>
         <span className="query-command"> Filtered By </span> 
-        <span className="query-parameter"> SECTION != 'Education' and DATE > '2010' </span>
+        <span className="query-parameter"> Section != 'Education' and Date > '2010' </span>
         <br />
-        -- Returns the entire file, filtering by date, excluding the 'Education' section
+        -- Filter the entire document by the specified date, except for the specified section.
+Note: The condition Date > ’2010’ is applied to all sections except ”Education” which is excluded
+from the filter. The priority is given to excluding the ”Education” section before applying the date
+filter to the rest.
       </p>
       <br />
       <p>
@@ -494,7 +525,7 @@ function HomePage() {
        <span className="query-command"> Show </span>  
         <span className="query-parameter">'Professional Experience', 'Education' </span> 
         <span className="query-command"> Filtered By </span>  
-        <span className="query-parameter"> DATE > '2010' </span>
+        <span className="query-parameter"> Date > '2010' </span>
         <br />
         -- Returns only the sections 'Professional Experience' and 'Education' with dates greater than 2010
       </p>
@@ -506,18 +537,18 @@ function HomePage() {
        <span className="query-command"> Show </span>  
         <span className="query-parameter">'Professional Experience', 'Education' </span> 
         <span className="query-command"> Filtered By </span>  
-        <span className="query-parameter"> subsection = 'Chair person' and date > '2010' </span>
+        <span className="query-parameter"> Subsection = 'Chair person' and Date > '2010' </span>
         <br />
         -- Returns only the sections 'Professional Experience' and 'Education' filtering the subsection 'Chair person' by date
       </p>
       <br />
       <p>
-        <strong>Example 9:</strong> Translating resume into another language
+        <strong>Example 9:</strong> Translating the resume into another language
       </p>
       <p>
-        <span className="query-command"> TRANSLATE FROM </span>
+        <span className="query-command"> Translate From </span>
         <span className="query-parameter"> 'fr' ;</span>
-        <span className="query-command"> TO </span>
+        <span className="query-command"> To </span>
         <span className="query-parameter"> 'en' ;</span>
         <br />
         -- Translates the resume from French to English
@@ -527,10 +558,20 @@ function HomePage() {
         <strong>Example 10:</strong> Reordering sections
       </p>
       <p>
-        <span className="query-command"> REORDER </span>
+        <span className="query-command"> Reorder </span>
         <span className="query-parameter"> 'Professional Experience', 'Education', 'Projects'</span>
         <br />
         -- Reorders the sections of the resume as specified
+      </p>
+      <br />
+      <p>
+        <strong>Example 11:</strong> Deleting sections
+      </p>
+      <p>
+        <span className="query-command"> Drop </span>
+        <span className="query-parameter"> 'Professional Experience', 'Education', 'Projects'</span>
+        <br />
+        -- Deletes the sections or subsections of the resume as specified
       </p>
     </Typography>
   </Paper>

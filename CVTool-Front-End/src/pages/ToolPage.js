@@ -128,7 +128,7 @@ function ToolPage() {
           Upload
         </Button>
         <div className="navbar-content">
-        <h1 className="navbar-title"  style={{ color: '#FAF4D3'}}> --- Resume Management Tool for LaTeX --- </h1>
+        <h1 className="navbar-title"  style={{ color: '#FAF4D3'}}> Resume Management Tool for LaTeX </h1>
         <IconButton
           component={Link}
           to="/"

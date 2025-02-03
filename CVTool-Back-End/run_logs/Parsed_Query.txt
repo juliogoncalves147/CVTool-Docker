@@ -1,1 +1,1 @@
-[{'queryField': 'REORDER', 'sectionlist': ['Education', 'Work Experience']}]
+[{'queryField': 'SHOW', 'clauses': [{'field': 'SECTION', 'operator': '=', 'value': 'Education'}, {'field': 'DATE', 'operator': '>', 'value': '2010'}, {'field': 'SECTION', 'operator': '=', 'value': 'Professional Experience'}, {'field': 'DATE', 'operator': '<', 'value': '2010'}], 'sectionlist': ['ALL']}]
